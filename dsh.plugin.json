@@ -1,0 +1,13 @@
+{
+  "id": "dsh-parent-child-agent",
+  "version": "0.1.0",
+  "main": "./lib/index.js",
+  "description": "Parent (high-intelligence) agent dispatches to a switchable child (same-cloud / other-cloud / local) and records externalized memory about user habits for self-improvement.",
+  "engines": {
+    "dsh": ">=0.1.0-rc.6"
+  },
+  "contributes": {
+    "tools": [],
+    "skills": ["parent-child-agent"]
+  }
+}

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Parent Child Agent">
+  <rect width="64" height="64" rx="12" fill="#0f172a"/>
+  <circle cx="22" cy="20" r="9" fill="#38bdf8"/>
+  <circle cx="42" cy="44" r="9" fill="#a78bfa"/>
+  <path d="M22 29v6a9 9 0 0 0 9 9h2" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round"/>
+  <path d="M28 34l-4 5 4 5" fill="none" stroke="#64748b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="22" cy="20" r="3.2" fill="#0f172a"/>
+  <circle cx="42" cy="44" r="3.2" fill="#0f172a"/>
+</svg>

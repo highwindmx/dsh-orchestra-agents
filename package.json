@@ -1,0 +1,68 @@
+{
+  "name": "dsh-parent-child-agent",
+  "version": "0.1.0",
+  "description": "Parent (high-intelligence) agent dispatches to a switchable child (same-cloud / other-cloud / local) and records externalized memory about user habits for self-improvement.",
+  "private": false,
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "dsh": ">=0.1.0-rc.6",
+    "node": ">=20"
+  },
+  "main": "lib/index.js",
+  "icon": "./icon.svg",
+  "exports": {
+    ".": "./lib/index.js",
+    "./package.json": "./package.json",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./icon": "./icon.svg",
+    "./locale/*.json": "./locale/*.json"
+  },
+  "files": [
+    "lib",
+    "skills",
+    "scripts",
+    "locale",
+    "docs",
+    "icon.svg",
+    "cordis.patch.yml",
+    "dsh.plugin.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "subagent",
+    "parent-agent",
+    "child-agent",
+    "local-llm",
+    "memory"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/highwindmx/dsh-orchestra-agents.git"
+  },
+  "homepage": "https://github.com/highwindmx/dsh-orchestra-agents#readme",
+  "bugs": {
+    "url": "https://github.com/highwindmx/dsh-orchestra-agents/issues"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.1",
+    "@deepseek-ai/schemastery": "^3.18.0"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/schemastery": {
+      "optional": true
+    }
+  },
+  "scripts": {
+    "verify": "node scripts/verify-bundle.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "manifestVersion": 1
+  }
+}

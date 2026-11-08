@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Parent / Child Agent",
+    "description": "Let a high-intelligence parent agent dispatch tasks to a switchable child (same cloud model, another cloud model, or a local model), and record externalized memory about user habits so the child gets better over time."
+  }
+}

@@ -1,0 +1,49 @@
+# dsh-parent-child-agent bundle patch: mount the playbook skill provider into
+# the host skill registry (its rows are host-plane, so every agent preset's
+# scope chain merges the skills it registers).
+#
+# This patch is applied over the dsh-base layer; later layers (the profile's own
+# cordis.patch.yml and --patch overlays) can still address this row by id.
+#
+# `config` here is the composition base layer. A `config` is replaced WHOLESALE,
+# never deep-merged, so the full default baseline below is spelled out. To change
+# the active child backend, add a patch row to your profile's cordis.patch.yml:
+#
+#   - id: parent-child-agent
+#     config:
+#       childBackend: local
+#       otherCloud: { provider: workbuddy, model: hy4std }
+#       local: { baseUrl: 'http://127.0.0.1:11434/v1', model: 'qwen2.5:7b-instruct-q4_K_M', apiKey: '', timeoutMs: 30000, temperature: 0.3, maxTokens: 2048 }
+#       fallbackBackend: same-cloud
+#       memory: { enabled: true, dataDir: '', injectTopK: 5, maxHabits: 200, captureTraces: true, traceRetention: 5000, minConfidence: 0.6 }
+#       dispatch: { maxDepth: 2, parallel: 2 }
+#
+# Settings-page edits are preferred (configEditor.edit) and take effect live;
+# this file is only the base layer.
+- insert:
+    - id: parent-child-agent
+      name: 'dsh-parent-child-agent'
+      config:
+        childBackend: same-cloud
+        otherCloud:
+          provider: workbuddy
+          model: hy4std
+        local:
+          baseUrl: 'http://127.0.0.1:11434/v1'
+          model: ''
+          apiKey: ''
+          timeoutMs: 30000
+          temperature: 0.3
+          maxTokens: 2048
+        fallbackBackend: same-cloud
+        memory:
+          enabled: true
+          dataDir: ''
+          injectTopK: 5
+          maxHabits: 200
+          captureTraces: true
+          traceRetention: 5000
+          minConfidence: 0.6
+        dispatch:
+          maxDepth: 2
+          parallel: 2
